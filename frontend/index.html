@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LinguaTranslate - Language Translation Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>文</span>
+                </div>
+
+                <div>
+                    <h1>LinguaTranslate</h1>
+                    <p>Language Translation Tool</p>
+                </div>
+            </div>
+
+            <div class="powered-by">
+                <span>Powered by</span>
+                <strong>Microsoft Translator</strong>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        AI-Powered Translation
+                    </div>
+
+                    <h2>
+                        Break Language
+                        <span>Barriers.</span>
+                    </h2>
+
+                    <p>
+                        Translate text instantly between multiple
+                        languages with Microsoft Translator.
+                    </p>
+
+                </div>
+
+
+                <!-- Translation Card -->
+                <div class="translator-card">
+
+                    <!-- Language Selection -->
+                    <div class="language-row">
+
+                        <div class="language-box">
+
+                            <label for="sourceLanguage">
+                                FROM
+                            </label>
+
+                            <select id="sourceLanguage">
+                            </select>
+
+                        </div>
+
+
+                        <button id="swapButton" class="swap-button" title="Swap languages" type="button">
+                            ⇄
+                        </button>
+
+
+                        <div class="language-box">
+
+                            <label for="targetLanguage">
+                                TO
+                            </label>
+
+                            <select id="targetLanguage">
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Translation Panels -->
+                    <div class="translation-area">
+
+                        <!-- Input -->
+                        <div class="text-panel">
+
+                            <div class="panel-header">
+
+                                <span>Original Text</span>
+
+                                <button id="clearButton" class="icon-button" title="Clear text" type="button">
+                                    ✕
+                                </button>
+
+                            </div>
+
+                            <textarea id="inputText" placeholder="Type or paste your text here..."
+                                maxlength="5000"></textarea>
+
+                            <div class="panel-footer">
+
+                                <span id="characterCount">
+                                    0 / 5000
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Output -->
+                        <div class="text-panel output-panel">
+
+                            <div class="panel-header">
+
+                                <span>Translated Text</span>
+
+                                <div class="output-actions">
+
+                                    <button id="copyButton" class="icon-button" title="Copy translation" type="button">
+                                        ⧉
+                                    </button>
+
+                                    <button id="speakButton" class="icon-button" title="Listen" type="button">
+                                        🔊
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div id="outputText" class="output-text">
+                                Your translation will appear here...
+                            </div>
+
+                            <div class="panel-footer">
+
+                                <span id="detectedLanguage"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Translate Button -->
+                    <button id="translateButton" class="translate-button" type="button">
+
+                        <span id="translateButtonText">
+                            Translate
+                        </span>
+
+                        <span id="loadingSpinner" class="spinner" hidden></span>
+
+                        <span>→</span>
+
+                    </button>
+
+
+                    <!-- Status -->
+                    <div id="statusMessage" class="status-message"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Features -->
+        <section class="features-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h3>
+                        Simple. Fast. Powerful.
+                    </h3>
+
+                    <p>
+                        Everything you need for seamless
+                        language translation.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ⚡
+                        </div>
+
+                        <h4>Instant Translation</h4>
+
+                        <p>
+                            Get your translations quickly
+                            using Microsoft's translation API.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🌎
+                        </div>
+
+                        <h4>Multiple Languages</h4>
+
+                        <p>
+                            Translate between popular
+                            languages from around the world.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔊
+                        </div>
+
+                        <h4>Text to Speech</h4>
+
+                        <p>
+                            Listen to your translated text
+                            using your browser's speech engine.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            📋
+                        </div>
+
+                        <h4>Easy Copy</h4>
+
+                        <p>
+                            Copy your translated result
+                            with a single click.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 LinguaTranslate. Built with
+                HTML, CSS, JavaScript, Node.js,
+                Express & Microsoft Translator.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
